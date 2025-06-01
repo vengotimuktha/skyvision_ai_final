@@ -12,7 +12,7 @@ from utils import (
 
 # ────────────── App Config ──────────────
 st.set_page_config(page_title="SkyVision AI - Document Q&A", layout="wide")
-st.title("📄 SkyVision AI — Ask Questions About Any PDF or CSV")
+st.title(" SkyVision AI — Ask Questions About Any PDF or CSV")
 
 UPLOAD_DIR = "data/input"
 INDEX_DIR = "data/skyvision_faiss_index"
@@ -30,7 +30,7 @@ if "clear_query" not in st.session_state:
     st.session_state["clear_query"] = False
 
 # ────────────── File Upload ──────────────
-st.markdown("### 📤 Upload PDF or CSV")
+st.markdown("###  Upload PDF or CSV")
 uploaded_files = st.file_uploader(
     "Upload files below",
     type=["pdf", "csv"],
