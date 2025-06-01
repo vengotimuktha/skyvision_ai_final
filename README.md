@@ -48,8 +48,8 @@ SkyVision AI is a real-world Retrieval-Augmented Generation (RAG) system that en
 
 | Uploading & Indexing                        | Q&A in Action                          |
 |--------------------------------------------|----------------------------------------|
-| ![Upload](./screenshots/upload_interface.png) | ![QA](./screenshots/qa_demo.png)        |
-| ![Indexing](./screenshots/indexing_status.png) |                                        |
+| ![Upload](upload_interface.png) | ![QA](screenshots/qa_demo.png)        |
+| ![Indexing](screenshots/indexing_status.png) |                                        |
 
 
 ---
