@@ -56,7 +56,7 @@ SkyVision AI is a real-world Retrieval-Augmented Generation (RAG) system that en
 
 ##  System Architecture
 
-![RAG Architecture](Rag Architecture.png)
+![RAG Architecture](Rag_Architecture.png)
 
 > End-to-end document Q&A pipeline using Retrieval-Augmented Generation (RAG)
 
