@@ -18,7 +18,7 @@ SkyVision AI is a real-world Retrieval-Augmented Generation (RAG) system that en
 -  Answers generated using `gpt-3.5-turbo` in under 3 seconds
 -  Modular pipeline for easy model/embedding upgrades
 -  Dockerized and deployed to GCP Cloud Run with auto-scaling
--  Secure secret handling via `.env` or GCP Secret Manager
+-  Secure API key handling using `.env` locally or GCP Secret Manager in cloud
 
 ---
 
@@ -106,13 +106,13 @@ streamlit run app.py
 ---
 
 ## GCP Cloud Deployment 
-SkyVision AI is fully Dockerized and deployed on Google Cloud Run.
+The production version is containerized with Docker and deployed to Google Cloud Run.
 
 GCP Secret Manager for API key management
 
 Auto-scaling containerized service
 
-Endpoint exposed via HTTPS with Cloud Run URL
+Exposed via HTTPS endpoint for secure document querying
 
 99.9% uptime and low-latency answers
 
