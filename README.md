@@ -58,25 +58,6 @@ SkyVision AI is a real-world Retrieval-Augmented Generation (RAG) system that en
 
 ![RAG Architecture](Rag_Architecture.png)
 
-> End-to-end document Q&A pipeline using Retrieval-Augmented Generation (RAG)
-
-User Upload (PDF/CSV)
-↓
-Text Extraction (PyPDF2 / pandas)
-↓
-Chunking (LangChain TextSplitter)
-↓
-Embedding (OpenAIEmbeddings)
-↓
-Vector Store (FAISS)
-↓
-User Query
-↓
-Top-k Retrieval (FAISS)
-↓
-LLM Answering (GPT-3.5 Turbo)
-↓
-Answer + Source Chunks Returned
 
 ##  Real-World Applications
 
