@@ -9,7 +9,7 @@ SkyVision AI is a real-world Retrieval-Augmented Generation (RAG) system that en
 
 ---
 
-##  Key Features
+## Key Features
 
 -  Upload and analyze documents up to 100MB (PDF or CSV)
 -  Semantic chunking using LangChain (500 token windows, 100 overlap)
@@ -22,7 +22,7 @@ SkyVision AI is a real-world Retrieval-Augmented Generation (RAG) system that en
 
 ---
 
-##  Project Structure
+## Project Structure
 
 
 `skyvision_ai/`
@@ -43,12 +43,53 @@ SkyVision AI is a real-world Retrieval-Augmented Generation (RAG) system that en
 - `README.md`                 # Project documentation
 
 
+---
+## Screenshots
+
+| Uploading & Indexing                        | Q&A in Action                          |
+|--------------------------------------------|----------------------------------------|
+| ![Upload](./screenshots/upload_interface.png) | ![QA](./screenshots/qa_demo.png)        |
+| ![Indexing](./screenshots/indexing_status.png) |                                        |
+
+
+---
+
+##  System Architecture
+
+![RAG Architecture](./screenshots/rag_architecture.png)
+
+> End-to-end document Q&A pipeline using Retrieval-Augmented Generation (RAG)
+
+User Upload (PDF/CSV)
+↓
+Text Extraction (PyPDF2 / pandas)
+↓
+Chunking (LangChain TextSplitter)
+↓
+Embedding (OpenAIEmbeddings)
+↓
+Vector Store (FAISS)
+↓
+User Query
+↓
+Top-k Retrieval (FAISS)
+↓
+LLM Answering (GPT-3.5 Turbo)
+↓
+Answer + Source Chunks Returned
+
+##  Real-World Applications
+
+- HR teams extracting summaries from resumes
+- Legal professionals querying lengthy contracts
+- Research analysts searching key facts in academic papers
+- Enterprise users handling operational PDFs and logs
+- 
 ## Local Development Setup
 
 Follow these steps to set up and run the application locally:
 
 ### 1. Clone the Repository
-
 
 git clone https://github.com/vengotimuktha/skyvision_ai_final.git
 cd skyvision_ai
@@ -75,37 +116,28 @@ OPENAI_API_KEY = "your-openai-key-here"
 
 streamlit run app.py
 
-### GCP Deployment Overview
-The application is containerized using Docker and deployed to Google Cloud Platform (Cloud Run). The cloud version includes:
+### GCP Cloud Deployment 
+SkyVision AI is fully Dockerized and deployed on Google Cloud Run.
 
-Dockerized backend with automatic build
+GCP Secret Manager for API key management
 
-Secrets managed securely using GCP Secret Manager
+Auto-scaling containerized service
 
-Deployed to Cloud Run with auto-scaling and health checks
+Endpoint exposed via HTTPS with Cloud Run URL
 
-Exposed endpoint for real-time document Q&A in production
+99.9% uptime and low-latency answers
 
-Deployment ensures low latency, scalability, and high availability for enterprise use cases.
 
-### RAG System Architecture
-[ User Uploads PDF/CSV ]
-           ↓
-[ Text Extraction ]
-           ↓
-[ Text Chunking via LangChain ]
-           ↓
-[ Embedding Generation (OpenAI) ]
-           ↓
-[ Semantic Indexing with FAISS ]
-           ↓
-[ User Asks Query ]
-           ↓
-[ Retrieve Top-k Chunks (FAISS) ]
-           ↓
-[ GPT-3.5 Turbo → Answer Generation ]
-           ↓
-[ Return Answer + Source Chunks ]
+## Future Enhancements
+Add file-level memory and persistent session chat
+
+Support for DOCX, XLSX, JSON ingestion
+
+Replace OpenAI with local models (e.g., Ollama, Llama 3)
+
+Add user login + usage tracking
+
+
 
 ## Author
 
@@ -113,3 +145,21 @@ Deployment ensures low latency, scalability, and high availability for enterpris
 GenAI Engineer |  Reality AI Lab  
  Portfolio: [https://datascienceportfol.io/mukthasreevengoti](https://datascienceportfol.io/mukthasreevengoti)  
  LinkedIn: [https://www.linkedin.com/in/mukthasree-vengoti](https://www.linkedin.com/in/mukthasree-vengoti)
+
+
+---
+
+##  Next Steps
+
+1.  Place your screenshots:
+   - `upload_example.png`
+   - `qa_example.png`
+   - `rag_architecture.png`
+   inside a `screenshots/` folder in your repo.
+
+2.  Paste this full README.md into your GitHub.
+
+3.  Commit and push.
+
+Let me know if you want help **creating the architecture diagram** or polishing **live demo setup instructions** next.
+
