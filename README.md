@@ -65,7 +65,9 @@ SkyVision AI is a real-world Retrieval-Augmented Generation (RAG) system that en
 - Legal professionals querying lengthy contracts
 - Research analysts searching key facts in academic papers
 - Enterprise users handling operational PDFs and logs
-- 
+
+---
+
 ## Local Development Setup
 
 Follow these steps to set up and run the application locally:
@@ -98,6 +100,7 @@ OPENAI_API_KEY = "your-openai-key-here"
 streamlit run app.py
 
 ---
+
 ## GCP Cloud Deployment 
 SkyVision AI is fully Dockerized and deployed on Google Cloud Run.
 
