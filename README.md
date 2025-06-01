@@ -112,6 +112,7 @@ Endpoint exposed via HTTPS with Cloud Run URL
 
 99.9% uptime and low-latency answers
 
+---
 
 ## Future Enhancements
 Add file-level memory and persistent session chat
@@ -122,7 +123,7 @@ Replace OpenAI with local models (e.g., Ollama, Llama 3)
 
 Add user login + usage tracking
 
-
+---
 
 ## Author
 
