@@ -97,7 +97,8 @@ OPENAI_API_KEY = "your-openai-key-here"
 
 streamlit run app.py
 
-### GCP Cloud Deployment 
+---
+## GCP Cloud Deployment 
 SkyVision AI is fully Dockerized and deployed on Google Cloud Run.
 
 GCP Secret Manager for API key management
