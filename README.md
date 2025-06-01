@@ -26,21 +26,21 @@ SkyVision AI is a real-world Retrieval-Augmented Generation (RAG) system that en
 
 
 `skyvision_ai/`
-│
-├── `app.py`                      # Streamlit frontend (UI)
-├── `utils.py`                    # Core logic (indexing, retrieval)
-├── `embed_store.py`              # Script for static text FAISS indexing
-│
-├── `data/`
-│   ├── `input/`                  # Uploaded PDFs/CSVs
-│   ├── `extracted/`              # Extracted raw text
-│   └── `skyvision_faiss_index/` # Stored FAISS indexes
-│
-├── `.env`                       # OpenAI key for local dev
-├── `.streamlit/secrets.toml`    # Secrets for Streamlit Cloud (optional)
-├── `requirements.txt`           # Python dependencies
-├── `Dockerfile`                # Container setup for GCP deployment
-└── `README.md`                 # Project documentation
+
+  ── `app.py`                      # Streamlit frontend (UI)
+  ── `utils.py`                    # Core logic (indexing, retrieval)
+  ── `embed_store.py`              # Script for static text FAISS indexing
+
+ ── `data/`
+   ── `input/`                  # Uploaded PDFs/CSVs
+   ── `extracted/`              # Extracted raw text
+   ── `skyvision_faiss_index/` # Stored FAISS indexes
+
+── `.env`                       # OpenAI key for local dev
+── `.streamlit/secrets.toml`    # Secrets for Streamlit Cloud (optional)
+── `requirements.txt`           # Python dependencies
+── `Dockerfile`                # Container setup for GCP deployment
+── `README.md`                 # Project documentation
 
 
 ## Local Development Setup
