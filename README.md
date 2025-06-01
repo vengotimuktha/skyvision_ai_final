@@ -32,7 +32,7 @@ SkyVision AI is an advanced Retrieval-Augmented Generation (RAG) system designed
 | ![Upload](./screenshots/upload_example.png) | ![QA](./screenshots/qa_example.png) |
 
 ## Directory Structure
-```text
+
 skyvision_ai/
 │
 ├── app.py                      # Streamlit frontend (UI)
