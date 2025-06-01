@@ -8,3 +8,4 @@ data/skyvision_faiss_index/*
 *.pack
 *.log
 *.env
+.streamlit/secrets.toml

@@ -1,18 +1,10 @@
-# embed_store.py
 from dotenv import load_dotenv
 load_dotenv()
 
+import os
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_openai import OpenAIEmbeddings, ChatOpenAI
-
+from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores.faiss import FAISS
-
-import os
-
-# Set your OpenAI API key (optionally from environment variables)
-import os
-openai_api_key = os.getenv("OPENAI_API_KEY")
-
 
 # Load the text
 with open("data/extracted/output_text.txt", "r", encoding="utf-8") as f:
@@ -25,8 +17,12 @@ text_splitter = RecursiveCharacterTextSplitter(
 )
 texts = text_splitter.split_text(raw_text)
 
+# Set your API key from the .env file
+openai_api_key = os.getenv("OPENAI_API_KEY")
+os.environ["OPENAI_API_KEY"] = openai_api_key
+
 # Create embeddings
-embedding_model = OpenAIEmbeddings(openai_api_key=openai_api_key)
+embedding_model = OpenAIEmbeddings()
 vectorstore = FAISS.from_texts(texts, embedding_model)
 
 # Save locally

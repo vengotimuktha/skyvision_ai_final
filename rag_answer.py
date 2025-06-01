@@ -16,7 +16,9 @@ load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
 # Load FAISS index
-embedding_model = OpenAIEmbeddings(openai_api_key=openai_api_key)
+os.environ["OPENAI_API_KEY"] = openai_api_key
+embedding_model = OpenAIEmbeddings()
+
 vectorstore = FAISS.load_local(
     "data/skyvision_faiss_index",
     embedding_model,
@@ -28,7 +30,8 @@ vectorstore = FAISS.load_local(
 retriever = vectorstore.as_retriever(search_type="similarity", k=5)
 
 # Load OpenAI LLM
-llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo", openai_api_key=openai_api_key)
+llm = ChatOpenAI(model_name="gpt-3.5-turbo")
+
 
 # Create RetrievalQA chain
 qa_chain = RetrievalQA.from_chain_type(
