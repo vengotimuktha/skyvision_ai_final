@@ -128,19 +128,5 @@ GenAI Engineer |  Reality AI Lab
  LinkedIn: [https://www.linkedin.com/in/mukthasree-vengoti](https://www.linkedin.com/in/mukthasree-vengoti)
 
 
----
 
-##  Next Steps
-
-1.  Place your screenshots:
-   - `upload_example.png`
-   - `qa_example.png`
-   - `rag_architecture.png`
-   inside a `screenshots/` folder in your repo.
-
-2.  Paste this full README.md into your GitHub.
-
-3.  Commit and push.
-
-Let me know if you want help **creating the architecture diagram** or polishing **live demo setup instructions** next.
 
