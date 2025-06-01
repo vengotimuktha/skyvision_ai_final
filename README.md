@@ -32,22 +32,23 @@ SkyVision AI is an advanced Retrieval-Augmented Generation (RAG) system designed
 | ![Upload](./screenshots/upload_example.png) | ![QA](./screenshots/qa_example.png) |
 
 ## Directory Structure
+```text
 skyvision_ai/
 │
-├── app.py # Streamlit frontend
-├── utils.py # Core logic (indexing, retrieval)
-├── embed_store.py # Standalone script to index static text
+├── app.py                      # Streamlit frontend (UI)
+├── utils.py                    # Core logic (indexing, retrieval)
+├── embed_store.py              # Script for static text FAISS indexing
 │
 ├── data/
-│ ├── input/ # Uploaded PDFs/CSVs
-│ ├── extracted/ # Extracted text from documents
-│ └── skyvision_faiss_index/ # Local FAISS index
+│   ├── input/                  # Uploaded PDFs/CSVs
+│   ├── extracted/              # Extracted raw text
+│   └── skyvision_faiss_index/ # Stored FAISS indexes
 │
-├── .env # OpenAI key for local runs
-├── .streamlit/secrets.toml # For Streamlit Cloud (if used)
-├── Dockerfile # Container configuration
-├── requirements.txt # Project dependencies
-└── README.md
+├── .env                        # OpenAI key for local dev
+├── .streamlit/secrets.toml    # Secrets for Streamlit Cloud (optional)
+├── requirements.txt           # Python dependencies
+├── Dockerfile                 # Container setup for GCP deployment
+└── README.md                  # Project documentation
 
 
 ## Local Development Setup
@@ -96,19 +97,27 @@ Exposed endpoint for real-time document Q&A in production
 Deployment ensures low latency, scalability, and high availability for enterprise use cases.
 
 ### RAG System Architecture
-User Input → Upload File (PDF/CSV)
-           → Extract Text (PyPDF2 / pandas)
-           → Split Text (LangChain TextSplitter)
-           → Generate Embeddings (OpenAIEmbeddings)
-           → Store in FAISS Vector Index
-           → User Query
-           → Retrieve Top-k Chunks (FAISS)
-           → Answer via GPT-3.5 (LangChain RetrievalQA)
-           → Display Answer + Source Chunks
+[ User Uploads PDF/CSV ]
+           ↓
+[ Text Extraction ]
+           ↓
+[ Text Chunking via LangChain ]
+           ↓
+[ Embedding Generation (OpenAI) ]
+           ↓
+[ Semantic Indexing with FAISS ]
+           ↓
+[ User Asks Query ]
+           ↓
+[ Retrieve Top-k Chunks (FAISS) ]
+           ↓
+[ GPT-3.5 Turbo → Answer Generation ]
+           ↓
+[ Return Answer + Source Chunks ]
+
 ## Author
 
 **Mukthasree Vengoti**  
 GenAI Engineer |  Reality AI Lab  
-Kent State University  
  Portfolio: [https://datascienceportfol.io/mukthasreevengoti](https://datascienceportfol.io/mukthasreevengoti)  
  LinkedIn: [https://www.linkedin.com/in/mukthasree-vengoti](https://www.linkedin.com/in/mukthasree-vengoti)
